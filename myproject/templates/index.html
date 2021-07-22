@@ -108,6 +108,9 @@
             {% else %}
             <p>This feature is false</p>
             {% endif %} -->
+            {% if feature.name == 'Quick' %}
+            <p>This feature says our site is quick</p>
+            {% endif %}
           </div>
         </div>
         {% endfor %}
