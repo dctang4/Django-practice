@@ -52,9 +52,11 @@ def index(request):
   # return render(request, 'index.html', {'feature1': feature1, 'feature2': feature2, 'feature3': feature3, 'feature4': feature4})
 
 def counter(request):
-  text = request.POST['text']
-  amount_of_words = len(text.split())
-  return render(request, 'counter.html', {'amount': amount_of_words})
+  posts = [1, 2, 3, 4, 5, 'tim', 'tom', 'john']
+  return render(request, 'counter.html', {'posts': posts})
+  # text = request.POST['text']
+  # amount_of_words = len(text.split())
+  # return render(request, 'counter.html', {'amount': amount_of_words})
 
 def register(request):
   if request.method == 'POST':
@@ -101,3 +103,6 @@ def login(request):
 def logout(request):
   auth.logout(request)
   return redirect('/')
+
+def post(request, pk):
+  return render(request, 'post.html', {'pk': pk})
